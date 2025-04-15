@@ -68,7 +68,7 @@ exports.vote = async (req, res) => {
           photoToUpdate.votes++;
           photoToUpdate.save();
           res.send({ message: 'OK' });
-        } else res.status(400).send({ message: 'You can not vote for this photo again!'});
+        } else res.status(409).send({ message: 'You can not vote for this photo again!'});
       }    
     }
   } catch(err) {
